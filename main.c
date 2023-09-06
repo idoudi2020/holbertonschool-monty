@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
     {
       opcode = strtok(line, " \r\n\t");
-      interpret(opcode, line_number, &stack);
+      execute(opcode, line_number, &stack);
     }
   fclose(file);
   free(line);
