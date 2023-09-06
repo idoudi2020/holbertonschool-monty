@@ -12,20 +12,20 @@
 int main(int argc, char **argv)
 {
 
-stack_t *stack = NULL;
-  if (argc != 2)
-    {
-      fprintf(stderr, "USAGE: monty file\n");
-      exit(EXIT_FAILURE);
-    }
+	stack_t *stack = NULL;
+	if (argc != 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
 
 
-  FILE *file = open_file(argv[1]);
+	FILE *file = open_file(argv[1]);
 
-  treat_instructions(file, &stack);
+	treat_instructions(file, &stack);
 
-  fclose(file);
-  free_stack(&stack);
+	fclose(file);
+	free_stack(&stack);
 
-  return (EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 }
