@@ -22,7 +22,7 @@ stack_t *stack = NULL;
 
   FILE *file = open_file(argv[1]);
 
-  execute_instructions(file, &stack);
+  treat_instructions(file, &stack);
 
   fclose(file);
   free_stack(&stack);
