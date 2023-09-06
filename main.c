@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	for (; (read = getline(&line, &len, file)) != -1; line_number++)
 
 	{
-		opcode = strtok(line, " \r\n\t");
+		opcode = strtok(line, " \n\t");
 		execute(opcode, line_number, &stack);
 	}
 	fclose(file);
