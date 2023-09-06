@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * interpret - Analyzes and executes a monty bytecode instruction
+ * execute - Analyzes and executes a monty bytecode instruction
  * @opcode: The opcode to interpret
  * @line_number: The line number where the opcode is located
  * @stack: Double pointer to the top of the stack
