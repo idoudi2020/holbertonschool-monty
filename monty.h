@@ -30,7 +30,7 @@ void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void add_node(stack_t **stack, int n);
 void free_stack(stack_t **stack);
-void execute_instructions(FILE *file, stack_t **stack);
+void treat_instructions(FILE *file, stack_t **stack);
 FILE* open_file(char *filename);
 int parse_arg(char *arg, unsigned int line_number);
 #endif /* MONTY_H */
