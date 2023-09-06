@@ -1,4 +1,4 @@
- #include "monty.h"
+#include "monty.h"
 
 /**
  * is_all_digits - Checks if a string only contains digits
@@ -8,19 +8,19 @@
  */
 int is_all_digits(char *arg)
 {
-  size_t i = 0;
-  size_t len = strlen(arg);
+	size_t i = 0;
+	size_t len = strlen(arg);
 
-  if (arg[0] == '-')
-    {
-      i = 1;
-    }
-  for (; i < len; i++)
-    {
-      if (arg[i] < '0' || arg[i] > '9')
+	if (arg[0] == '-')
 	{
-	  return (0);
+		i = 1;
 	}
-    }
-  return (1);
+	for (; i < len; i++)
+	{
+		if (arg[i] < '0' || arg[i] > '9')
+		{
+			return (0);
+		}
+	}
+	return (1);
 }
