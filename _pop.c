@@ -1,4 +1,4 @@
-gg=G#include "monty.h"
+#include "monty.h"
 
 /**
  * _pop - Removes the top element of the stack
