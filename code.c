@@ -7,16 +7,16 @@
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
-  char *arg = strtok(NULL, "\n\t\r ");
+	char *arg = strtok(NULL, "\n\t\r ");
 
-  if (!arg)
-    {
-      fprintf(stderr, "L%d: usage: push integer\n", line_number);
-      exit(EXIT_FAILURE);
-    }
+	if (!arg)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
-  int n = parse_arg(arg, line_number);
-  add_node(stack, n);
+	int n = parse_arg(arg, line_number);
+	add_node(stack, n);
 }
 
 /**
@@ -26,15 +26,15 @@ void _push(stack_t **stack, unsigned int line_number)
  */
 void _pall(stack_t **stack, unsigned int line_number)
 {
-  (void)line_number;
+	(void)line_number;
 
-  stack_t *node = *stack;
+	stack_t *node = *stack;
 
-  while (node)
-    {
-      printf("%d\n", node->n);
-      node = node->next;
-    }
+	while (node)
+	{
+		printf("%d\n", node->n);
+		node = node->next;
+	}
 }
 
 /**
@@ -44,13 +44,13 @@ void _pall(stack_t **stack, unsigned int line_number)
  */
 void _pint(stack_t **stack, unsigned int line_number)
 {
-  if (!stack || !*stack)
-    {
-      fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-      exit(EXIT_FAILURE);
-    }
+	if (!stack || !*stack)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
-  printf("%d\n", (*stack)->n);
+	printf("%d\n", (*stack)->n);
 }
 
 /**
@@ -60,19 +60,19 @@ void _pint(stack_t **stack, unsigned int line_number)
  */
 void _pop(stack_t **stack, unsigned int line_number)
 {
-  if (!stack || !*stack)
-    {
-      fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-      exit(EXIT_FAILURE);
-    }
+	if (!stack || !*stack)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
-  stack_t *top = *stack;
-  *stack = top->next;
+	stack_t *top = *stack;
+	*stack = top->next;
 
-  if (*stack)
-    (*stack)->prev = NULL;
+	if (*stack)
+		(*stack)->prev = NULL;
 
-  free(top);
+	free(top);
 }
 
 /**
@@ -82,13 +82,13 @@ void _pop(stack_t **stack, unsigned int line_number)
  */
 void _swap(stack_t **stack, unsigned int line_number)
 {
-  if (!stack || !*stack || !((*stack)->next))
-    {
-      fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
-      exit(EXIT_FAILURE);
-    }
+	if (!stack || !*stack || !((*stack)->next))
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
-  int swap = (*stack)->n;
-  (*stack)->n = (*stack)->next->n;
-  (*stack)->next->n = swap;
+	int swap = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = swap;
 }
