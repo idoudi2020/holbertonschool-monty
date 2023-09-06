@@ -8,50 +8,50 @@
  */
 void treat_instructions(FILE *file, stack_t **stack)
 {
-  char *line = NULL;
-  size_t len = 0;
-  ssize_t read;
-  char *opcode;
-  unsigned int line_number = 0;
+	char *line = NULL;
+	size_t len = 0;
+	ssize_t read;
+	char *opcode;
+	unsigned int line_number = 0;
 
-  static const instruction_t instructions[] = {
-					       {"push", _push},
-					       {"pall", _pall},
-					       {"pint", _pint},
-					       {"pop", _pop},
-					       {"swap", _swap},
-					       {"add", _add},
-					       {"nop", _nop},
-					       {NULL, NULL}
-  };
+	static const instruction_t instructions[] = {
+		{"push", _push},
+		{"pall", _pall},
+		{"pint", _pint},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"add", _add},
+		{"nop", _nop},
+		{NULL, NULL}
+	};
 
-  for (line_number = 1; (read = getline(&line, &len, file)) != -1; line_number++)
-    {
-
-      line[strcspn(line, "\n")] = '\0';
-      opcode = strtok(line, " \t\r");
-
-      if (opcode == NULL)
-	continue;
-
-      int i;
-      for (i = 0; instructions[i].opcode; i++)
+	for (line_number = 1; (read = getline(&line, &len, file)) != -1; line_number++)
 	{
-	  if (strcmp(opcode, instructions[i].opcode) == 0)
-	    {
-	      instructions[i].f(stack, line_number);
-	      break;
-	    }
+
+		line[strcspn(line, "\n")] = '\0';
+		opcode = strtok(line, " \t\r");
+
+		if (opcode == NULL)
+			continue;
+
+		int i;
+		for (i = 0; instructions[i].opcode; i++)
+		{
+			if (strcmp(opcode, instructions[i].opcode) == 0)
+			{
+				instructions[i].f(stack, line_number);
+				break;
+			}
+		}
+
+		if (instructions[i].opcode == NULL)
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+			exit(EXIT_FAILURE);
+		}
 	}
 
-      if (instructions[i].opcode == NULL)
-	{
-	  fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-	  exit(EXIT_FAILURE);
-	}
-    }
-
-  free(line);
+	free(line);
 }
 
 /**
@@ -63,20 +63,20 @@ void treat_instructions(FILE *file, stack_t **stack)
  */
 int parse_arg(char *arg, unsigned int line_number)
 {
-  char *ptr;
-  int n;
+	char *ptr;
+	int n;
 
-  while (*arg == ' ' || *arg == '\t')
-    arg++;
+	while (*arg == ' ' || *arg == '\t')
+		arg++;
 
-  n = (int)strtol(arg, &ptr, 10);
+	n = (int)strtol(arg, &ptr, 10);
 
-  if (ptr == arg || *ptr != '\0')
-    {
-      fprintf(stderr, "L%d: usage: push integer\n", line_number);
-      exit(EXIT_FAILURE);
-    }
-  return (n);
+	if (ptr == arg || *ptr != '\0')
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	return (n);
 }
 
 /**
@@ -86,20 +86,20 @@ int parse_arg(char *arg, unsigned int line_number)
  */
 void add_node(stack_t **stack, int n)
 {
-  stack_t *new_node = malloc(sizeof(stack_t));
+	stack_t *new_node = malloc(sizeof(stack_t));
 
-  if (new_node == NULL)
-    {
-      fprintf(stderr, "Error: malloc failed\n");
-      exit(EXIT_FAILURE);
-    }
-  new_node->n = n;
-  new_node->prev = NULL;
-  new_node->next = *stack;
+	if (new_node == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	new_node->n = n;
+	new_node->prev = NULL;
+	new_node->next = *stack;
 
-  if (*stack != NULL)
-    (*stack)->prev = new_node;
-  *stack = new_node;
+	if (*stack != NULL)
+		(*stack)->prev = new_node;
+	*stack = new_node;
 }
 
 /**
@@ -112,18 +112,18 @@ void add_node(stack_t **stack, int n)
  */
 int _isdigit(char *str)
 {
-  int i = 0;
+	int i = 0;
 
-  if (str[i] == '-' || str[i] == '+')
-    i++;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
 
-  while (str[i])
-    {
-      if (isdigit(str[i]) == 0)
-	return (0);
-      i++;
-    }
-  return (1);
+	while (str[i])
+	{
+		if (isdigit(str[i]) == 0)
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 /**
@@ -135,12 +135,12 @@ int _isdigit(char *str)
  */
 FILE *open_file(char *filename)
 {
-  FILE *file = fopen(filename, "r");
+	FILE *file = fopen(filename, "r");
 
-  if (file == NULL)
-    {
-      fprintf(stderr, "Error: Can't open file %s\n", filename);
-      exit(EXIT_FAILURE);
-    }
-  return (file);
+	if (file == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
+		exit(EXIT_FAILURE);
+	}
+	return (file);
 }
