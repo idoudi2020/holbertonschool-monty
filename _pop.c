@@ -1,4 +1,4 @@
-#include "monty.h"
+gg=G#include "monty.h"
 
 /**
  * _pop - Removes the top element of the stack
@@ -9,18 +9,18 @@
  */
 void _pop(stack_t **stack, unsigned int line_number)
 {
-  stack_t *tmp;
+	stack_t *tmp;
 
-  if (!stack || !*stack)
-    {
-      fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
-      exit(EXIT_FAILURE);
-    }
-  tmp = (*stack)->next;
-  free(*stack);
-  *stack = tmp;
-  if (*stack)
-    {
-      (*stack)->prev = NULL;
-    }
+	if (!stack || !*stack)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	tmp = (*stack)->next;
+	free(*stack);
+	*stack = tmp;
+	if (*stack)
+	{
+		(*stack)->prev = NULL;
+	}
 }
