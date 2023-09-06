@@ -1,16 +1,16 @@
 #include "monty.h"
+
 /**
- * execute_instructions - Reads a file line by line and executes
+ * execute_instructions - Reads a file line by line and executes Monty instructions.
  *
  * @file: Pointer to the file to be read.
  * @stack: Double pointer to the stack.
  */
-void execute_instructions(FILE *file, stack_t **stack)
+void treat_instructions(FILE *file, stack_t **stack)
 {
   char *line = NULL;
   size_t len = 0;
   ssize_t read;
-  int i;
   char *opcode;
   unsigned int line_number = 0;
 
@@ -25,18 +25,16 @@ void execute_instructions(FILE *file, stack_t **stack)
 					       {NULL, NULL}
   };
 
-  while ((read = getline(&line, &len, file)) != -1)
+  for (line_number = 1; (read = getline(&line, &len, file)) != -1; line_number++)
     {
-      line_number++;
-
-      if (line[read - 1] == '\n')
-	line[read - 1] = '\0';
-      opcode = strtok(line, "\t\r ");
+      // Remove trailing newline if it exists
+      line[strcspn(line, "\n")] = '\0';
+      opcode = strtok(line, " \t\r");
 
       if (opcode == NULL)
 	continue;
 
-
+      int i;
       for (i = 0; instructions[i].opcode; i++)
 	{
 	  if (strcmp(opcode, instructions[i].opcode) == 0)
@@ -52,8 +50,10 @@ void execute_instructions(FILE *file, stack_t **stack)
 	  exit(EXIT_FAILURE);
 	}
     }
+
   free(line);
 }
+
 /**
  * parse_arg - Parses the argument to ensure it's a valid integer.
  * @arg: The argument string to parse.
@@ -64,7 +64,12 @@ void execute_instructions(FILE *file, stack_t **stack)
 int parse_arg(char *arg, unsigned int line_number)
 {
   char *ptr;
-  int n = (int)strtol(arg, &ptr, 10);
+  int n;
+
+  while (*arg == ' ' || *arg == '\t')
+    arg++;
+
+  n = (int)strtol(arg, &ptr, 10);
 
   if (ptr == arg || *ptr != '\0')
     {
@@ -111,13 +116,16 @@ int _isdigit(char *str)
 
   if (str[i] == '-' || str[i] == '+')
     i++;
-  for (; str[i]; i++)
+
+  while (str[i])
     {
       if (isdigit(str[i]) == 0)
 	return (0);
+      i++;
     }
   return (1);
 }
+
 /**
  * open_file - Opens a file for reading and handles errors.
  *
