@@ -27,7 +27,7 @@ void treat_instructions(FILE *file, stack_t **stack)
 
   for (line_number = 1; (read = getline(&line, &len, file)) != -1; line_number++)
     {
-      // Remove trailing newline if it exists
+
       line[strcspn(line, "\n")] = '\0';
       opcode = strtok(line, " \t\r");
 
