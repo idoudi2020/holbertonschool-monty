@@ -6,7 +6,7 @@
  * @line_number: The line number where the opcode is located
  * @stack: Double pointer to the top of the stack
  */
-void interpret(char *opcode, unsigned int line_number, stack_t **stack)
+void execute(char *opcode, unsigned int line_number, stack_t **stack)
 {
   instruction_t op_func[] = {
 			     {"push", _push},
