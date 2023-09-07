@@ -1,6 +1,6 @@
 #include "monty.h"
 
-/**
+/***
  * treat_instructions - Reads file line by line executes Monty instructions
  *
  * @file: Pointer to the file to be read.
