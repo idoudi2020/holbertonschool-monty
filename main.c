@@ -13,6 +13,7 @@ int main(int argc, char **argv)
 {
 
 	stack_t *stack = NULL;
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
