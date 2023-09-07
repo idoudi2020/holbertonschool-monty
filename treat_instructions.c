@@ -1,3 +1,4 @@
+#include "monty.h"
 
 /**
  * execute_instructions - Reads a file line by line and executes Monty instructions.
