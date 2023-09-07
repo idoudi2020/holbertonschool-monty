@@ -16,5 +16,5 @@ void _push(stack_t **stack, unsigned int line_number)
 	}
 
 	int n = parse_arg(arg, line_number);
-	add_node(stack, n);
+		add_node(stack, n);
 }
