@@ -1,8 +1,7 @@
 #include "monty.h"
 
-/***
+/**
  * treat_instructions - Reads file line by line executes Monty instructions
- *
  * @file: Pointer to the file to be read.
  * @stack: Double pointer to the stack.
  */
@@ -10,7 +9,7 @@ void treat_instructions(FILE *file, stack_t **stack)
 {
 	char *line = NULL;
 	size_t len = 0;
-	ssize_t read;
+	size_t read;
 	char *opcode;
 	unsigned int line_num = 0;
 	static const instruction_t instructions[] = {
