@@ -13,14 +13,10 @@ void treat_instructions(FILE *file, stack_t **stack)
 	char *opcode;
 	unsigned int line_num = 0;
 	static const instruction_t instructions[] = {
-		{"push", _push},
-		{"pall", _pall},
-		{"pint", _pint},
-		{"pop", _pop},
-		{"swap", _swap},
-		{"add", _add},
-		{"nop", _nop},
-		{NULL, NULL}
+		{"push", _push}, {"pall", _pall},
+		{"pint", _pint}, {"pop", _pop},
+		{"swap", _swap}, {"add", _add},
+		{"nop", _nop}, {NULL, NULL}
 	};
 
 	for (line_num = 1; (read = getline(&line, &len, file)) != -1; line_num++)
