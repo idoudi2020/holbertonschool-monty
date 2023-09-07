@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _add - Adds the top two elements in the stack.
+ * _add - Adds top two elements in the stack.
  * @stack: Pointer to a pointer to the stack.
  * @line_number: The line number where the function is called.
  */
