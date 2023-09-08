@@ -16,13 +16,17 @@ This project is a simple Monty language interpreter written in C. Monty is a scr
 
 4. `add_node.c` - Contains the functions for creating a new node, pushing it onto the stack, and printing all elements of the stack.
 
-5. `is_all_digits.c` - Contains a function for checking if a given string contains only digits.
+5. `_isdigit.c` - Contains a function for checking if a given string contains only digits.
 
 6. `free_all.c` - Contains a function for freeing a doubly linked stack.
 
-7. `_pint.c _pop.c _swap.c` - Contains functions to print the top element of the stack, remove the top element of the stack, and swap the top two elements of the stack
+7. `_pint.c _pop.c _swap.c _pall.c _push.c` - Contains functions to pushes an integer onto the stack and print the top element of the stack, remove the top element of the stack, and swap the top two elements of the stack,and prints all values in the stack from the top
 
 8. `_add.c _nop.c` - Contains functions to add the top two elements of the stack and to perform a no-operation command
+
+9. `parse_arg.c`  -Contains functions to parse arguments to ensure it's a valid integer
+
+10. `open_file.c` -Contains functions to reading and handles errors
 
 ## `Requirements`
 All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
