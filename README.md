@@ -2,11 +2,11 @@
   <img width="1500" alt="monty" src="https://github.com/idoudi2020/holbertonschool-monty/assets/124044887/2d732141-4e6e-4a9e-aef8-c9402e0c124d">
           </p>
 
-# Monty Language Interpreter
+# `Monty Language Interpreter`
 
 This project is a simple Monty language interpreter written in C. Monty is a scripting language that is first compiled into Monty byte codes. It relies on a unique stack, with specific instructions to manipulate it.
 
-## Files and their functions:
+## `Files and their functions`
 
 1. `monty.h` - Contains all function prototypes, struct definitions, and library includes.
 
@@ -31,7 +31,7 @@ To compile the simple shell, run:, execute:
 ```bash
 $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 ```
-## Usage:
+## `Usage`
 
 The Monty language interpreter can be compiled and run with a Monty byte code file as follows:
 
@@ -52,7 +52,7 @@ USER@ubuntu:~/monty$ ./monty bytecodes/00.m
 USER@ubuntu:~/monty
 ```
 In the `bytecodes/` directory, you'll find some examples of Monty byte code files.
-## Opcodes:
+## `Opcodes`
 The following opcodes are supported:
 
 - `push`: pushes an element to the stack.
@@ -63,12 +63,12 @@ The following opcodes are supported:
 - `add`: adds the top two elements of the stack.
 - `nop`: doesn’t do anything.
 
-## Memory Management:
+## `Memory Management`
 The program frees all dynamically allocated memory before exiting, ensuring there are no memory leaks.
 
-## Error Handling:
+## `Error Handling`
 The program has extensive error handling for scenarios such as incorrect usage, inability to open the file, invalid instructions, invalid arguments to instructions, and failures to malloc memory. In such cases, the program exits with the status `EXIT_FAILURE`.
-## `License` :busts_in_silhouette:
+## `License`
 Authors :
 -Idoudi Mokhtar  < 6181@holbertonstudents.com >
 -saima riaz < 6738@holbertonstudents.com >
