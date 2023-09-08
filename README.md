@@ -40,10 +40,6 @@ $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 The Monty language interpreter can be compiled and run with a Monty byte code file as follows:
 
 ```bash
-$ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
-```
-
-```bash
 USER@ubuntu:~/monty$ cat -e bytecodes/00.m
 push 1$
 push 2$
