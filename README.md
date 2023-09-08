@@ -12,9 +12,9 @@ This project is a simple Monty language interpreter written in C. Monty is a scr
 
 2. `main.c` - The entry point of the program. It opens the bytecode file, reads each line, and passes the opcode to the interpreter.
 
-3. `interpret.c` - Contains the interpreter function which compares the opcode to known instructions and executes the corresponding function.
+3. `treat_instructions.c` - Contains the interpreter function which compares the opcode to known instructions and executes the corresponding function.
 
-4. `new_push_pall.c` - Contains the functions for creating a new node, pushing it onto the stack, and printing all elements of the stack.
+4. `add_node.c` - Contains the functions for creating a new node, pushing it onto the stack, and printing all elements of the stack.
 
 5. `is_all_digits.c` - Contains a function for checking if a given string contains only digits.
 
