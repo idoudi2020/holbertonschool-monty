@@ -24,14 +24,13 @@ This project is a simple Monty language interpreter written in C. Monty is a scr
 
 8. `_add.c _nop.c` - Contains functions to add the top two elements of the stack and to perform a no-operation command
 
-## Usage:
+## `Requirements`
+All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
 
-The Monty language interpreter can be compiled and run with a Monty byte code file as follows:
-
+To compile the simple shell, run:, execute:
 ```bash
 $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 ```
-
 ```bash
 USER@ubuntu:~/monty$ cat -e bytecodes/00.m
 push 1$
