@@ -64,3 +64,13 @@ The program frees all dynamically allocated memory before exiting, ensuring ther
 
 ## Error Handling:
 The program has extensive error handling for scenarios such as incorrect usage, inability to open the file, invalid instructions, invalid arguments to instructions, and failures to malloc memory. In such cases, the program exits with the status `EXIT_FAILURE`.
+## `License` :busts_in_silhouette:
+Authors :
+-Idoudi Mokhtar  < 6181@holbertonstudents.com >
+-saima < 1111@holbertonstudents.com >
+
+**This project was made as part of the curriculum in HOLBERTON SCHOOL**
+
+<p align="center">
+  <a href="https://www.holbertonschool.com/"target="_blank"><img src="https://user-images.githubusercontent.com/97880395/181658846-6e76edce-7d56-4abe-8c62-228479bde436.png" </a>
+          </p>
