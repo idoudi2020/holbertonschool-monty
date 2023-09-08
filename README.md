@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="535" alt="monty" src="https://github.com/idoudi2020/holbertonschool-monty/assets/124044887/2d732141-4e6e-4a9e-aef8-c9402e0c124d">
+          </p>
+
 # Monty Language Interpreter
 
 This project is a simple Monty language interpreter written in C. Monty is a scripting language that is first compiled into Monty byte codes. It relies on a unique stack, with specific instructions to manipulate it.
