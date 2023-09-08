@@ -18,7 +18,7 @@ This project is a simple Monty language interpreter written in C. Monty is a scr
 
 5. `is_all_digits.c` - Contains a function for checking if a given string contains only digits.
 
-6. `free_stack.c` - Contains a function for freeing a doubly linked stack.
+6. `free_all.c` - Contains a function for freeing a doubly linked stack.
 
 7. `_pint.c _pop.c _swap.c` - Contains functions to print the top element of the stack, remove the top element of the stack, and swap the top two elements of the stack
 
