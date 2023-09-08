@@ -31,6 +31,14 @@ To compile the simple shell, run:, execute:
 ```bash
 $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 ```
+## Usage:
+
+The Monty language interpreter can be compiled and run with a Monty byte code file as follows:
+
+```bash
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
+```
+
 ```bash
 USER@ubuntu:~/monty$ cat -e bytecodes/00.m
 push 1$
@@ -43,10 +51,7 @@ USER@ubuntu:~/monty$ ./monty bytecodes/00.m
 1
 USER@ubuntu:~/monty
 ```
-
-
 In the `bytecodes/` directory, you'll find some examples of Monty byte code files.
-
 ## Opcodes:
 The following opcodes are supported:
 
@@ -66,7 +71,7 @@ The program has extensive error handling for scenarios such as incorrect usage, 
 ## `License` :busts_in_silhouette:
 Authors :
 -Idoudi Mokhtar  < 6181@holbertonstudents.com >
--saima < 1111@holbertonstudents.com >
+-saima riaz < 6738@holbertonstudents.com >
 
 **This project was made as part of the curriculum in HOLBERTON SCHOOL**
 
