@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="535" alt="monty" src="https://github.com/idoudi2020/holbertonschool-monty/assets/124044887/2d732141-4e6e-4a9e-aef8-c9402e0c124d">
+  <img width="1000" alt="monty" src="https://github.com/idoudi2020/holbertonschool-monty/assets/124044887/2d732141-4e6e-4a9e-aef8-c9402e0c124d">
           </p>
 
 # Monty Language Interpreter
